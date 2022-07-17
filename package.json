@@ -1,0 +1,28 @@
+{
+  "name": "sns-tester",
+  "version": "1.0.0",
+  "description": "Testing for the sns-payload-validator NPM module",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -a @hapi/code -L --m 10000"
+  },
+  "author": "Devin Stewart",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.2",
+    "@octokit/rest": "^19.0.3",
+    "aws-sdk": "^2.1176.0",
+    "fs-extra": "^10.1.0",
+    "globby": "^11.1.0",
+    "sns-payload-validator": "^1.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:@hapi/module"
+    ]
+  },
+  "devDependencies": {
+    "@hapi/code": "^9.0.1",
+    "@hapi/lab": "^25.0.1"
+  }
+}
