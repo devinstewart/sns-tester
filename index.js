@@ -61,7 +61,6 @@ const init = async (start = false) => {
 
                 try {
                     const { payload } = request;
-		    console.log(payload);
                     const validPayload = await Validator.validate(payload);
                     if (validPayload.Type === 'SubscriptionConfirmation' || validPayload.Type === 'UnsubscribeConfirmation') {
                         // deepcode ignore Ssrf: <validPayload.SubscribeURL has been sanitized by Validator>
