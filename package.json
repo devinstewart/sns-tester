@@ -12,7 +12,7 @@
     "@hapi/hapi": "^20.2.2",
     "@octokit/rest": "^19.0.3",
     "aws-sdk": "^2.1176.0",
-    "fs-extra": "^10.1.0",
+    "fs-extra": "^11.0.0",
     "globby": "^11.1.0",
     "sns-payload-validator": "^1.1.0"
   },
