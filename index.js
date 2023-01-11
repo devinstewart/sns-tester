@@ -8,6 +8,7 @@ const { pushGithubMessage ,getSnsTopicArn } = require('./lib');
 const Fs = require('fs');
 
 const SNS = new AWS.SNS({ 'region': 'us-east-1' });
+const validator = new Validator();
 
 const init = async (start = false) => {
 
@@ -24,7 +25,7 @@ const init = async (start = false) => {
 
                 try {
                     const { payload } = request;
-                    const validPayload = await Validator.validate(payload);
+                    const validPayload = await validator.validate(payload);
                     if (validPayload.Type === 'SubscriptionConfirmation' || validPayload.Type === 'UnsubscribeConfirmation') {
                         // deepcode ignore Ssrf: <validPayload.SubscribeURL has been sanitized by Validator>
                         Https.get(validPayload.SubscribeURL, (err) => {
